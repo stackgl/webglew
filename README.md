@@ -1,6 +1,6 @@
 webglew
 =======
-*WebGL* *E*xtension *W*rangler.  Manages WebGL extensions so you don't have to.
+**WebGL** **E** xtension **W** rangler.  Manages WebGL extensions so you don't have to.
 
 Usage
 =====

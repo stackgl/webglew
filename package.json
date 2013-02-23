@@ -1,0 +1,27 @@
+{
+  "name": "webglew",
+  "version": "0.0.0",
+  "description": "WebGL extension wrangler",
+  "main": "webglew.js",
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mikolalysenko/webglew.git"
+  },
+  "keywords": [
+    "webgl",
+    "gl",
+    "extension",
+    "glew",
+    "wrangler",
+    "float_texture",
+    "OES_texture_float",
+    "khronos"
+  ],
+  "author": "Mikola Lysenko",
+  "license": "BSD",
+  "readmeFilename": "README.md",
+  "gitHead": "c561ef237cb3b66576b0e9e599f729628a209649"
+}
