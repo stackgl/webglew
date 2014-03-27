@@ -1,35 +1,36 @@
 "use strict";
 
-var VENDOR_PREFIX = [
-  "WEBKIT_",
-  "MOZ_"
-];
+var WeakMap = WeakMap || require("weakmap")
+
+var WebGLEWStruct = new WeakMap()
 
 function baseName(ext_name) {
-  for(var i=0; i<VENDOR_PREFIX.length; ++i) {
-    var prefix = VENDOR_PREFIX[i];
-    if(ext_name.indexOf(prefix) === 0) {
-      return ext_name.slice(prefix.length);
-    }
-  }
-  return ext_name;
+  return ext_name.replace(/^[A-Z]+_/, "")
 }
 
 function initWebGLEW(gl) {
-  if(gl._webglew_struct) {
-    return gl._webglew_struct;
+  var struct = WebGLEWStruct.get(gl)
+  if(struct) {
+    return struct
   }
-  var extensions = {};
-  var supported = gl.getSupportedExtensions();
+  var extensions = {}
+  var supported = gl.getSupportedExtensions()
   for(var i=0; i<supported.length; ++i) {
-    var ext = gl.getExtension(supported[i]);
+    var extName = supported[i]
+    var ext = gl.getExtension(supported[i])
     if(!ext) {
-      continue;
+      continue
     }
-    extensions[supported[i]] = ext;
-    extensions[baseName(supported[i])] = ext; //Add version without VENDOR
+    while(true) {
+      extensions[extName] = ext
+      var base = baseName(extName)
+      if(base === extName) {
+        break
+      }
+      extName = base
+    }
   }
-  gl._webglew_struct = extensions;
-  return extensions;
+  WebGLEWStruct.set(gl, extensions)
+  return extensions
 }
-module.exports = initWebGLEW;
+module.exports = initWebGLEW
