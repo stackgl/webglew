@@ -1,6 +1,6 @@
 {
   "name": "webglew",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "WebGL extension wrangler",
   "main": "webglew.js",
   "scripts": {
