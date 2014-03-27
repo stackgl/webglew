@@ -1,8 +1,8 @@
 "use strict";
 
-var WeakMap = WeakMap || require("weakmap")
+var weakMap = WeakMap || require("weakmap")
 
-var WebGLEWStruct = new WeakMap()
+var WebGLEWStruct = new weakMap()
 
 function baseName(ext_name) {
   return ext_name.replace(/^[A-Z]+_/, "")
