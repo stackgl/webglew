@@ -10,14 +10,16 @@ First, install using npm:
     
 Then you can pull in a list of extensions by passing it a WebGL context:
 
-    var gl = require("gl");
-    var ext = require("webglew")(gl);
-    
-    if(ext.OES_texture_float) {
-      console.log("GL context supports floats!");
-    } else {
-      console.log("No floating point textures :'(");
-    }
+```javascript
+var gl = require("gl");
+var ext = require("webglew")(gl);
+
+if(ext.OES_texture_float) {
+  console.log("GL context supports floats!");
+} else {
+  console.log("No floating point textures :'(");
+}
+```
     
 `require("webglew")(gl)`
 ------------------------
@@ -28,6 +30,10 @@ To use the library, call the module with a WebGL context and it will return a Ja
 Becomes:
 
     WEBGL_lose_context
+
+Or alternatively:
+
+    lose_context
 
 Credits
 =======
