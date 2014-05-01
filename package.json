@@ -1,6 +1,6 @@
 {
   "name": "webglew",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "WebGL extension wrangler",
   "main": "webglew.js",
   "scripts": {
@@ -21,7 +21,7 @@
     "khronos"
   ],
   "author": "Mikola Lysenko",
-  "license": "BSD",
+  "license": "MIT",
   "readmeFilename": "README.md",
   "gitHead": "c561ef237cb3b66576b0e9e599f729628a209649",
   "dependencies": {
