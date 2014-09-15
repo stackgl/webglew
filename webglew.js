@@ -1,11 +1,11 @@
-"use strict";
+'use strict'
 
-var weakMap = typeof WeakMap === "undefined" ? require("weakmap") : WeakMap
+var weakMap = typeof WeakMap === 'undefined' ? require('weakmap') : WeakMap
 
 var WebGLEWStruct = new weakMap()
 
 function baseName(ext_name) {
-  return ext_name.replace(/^[A-Z]+_/, "")
+  return ext_name.replace(/^[A-Z]+_/, '')
 }
 
 function initWebGLEW(gl) {
@@ -17,6 +17,11 @@ function initWebGLEW(gl) {
   var supported = gl.getSupportedExtensions()
   for(var i=0; i<supported.length; ++i) {
     var extName = supported[i]
+
+    //Skip MOZ_ extensions
+    if(extName.indexOf('MOZ_') === 0) {
+      continue
+    }
     var ext = gl.getExtension(supported[i])
     if(!ext) {
       continue
