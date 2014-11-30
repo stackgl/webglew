@@ -1,6 +1,6 @@
 'use strict'
 
-var weakMap = typeof WeakMap === 'undefined' ? require('weakmap') : WeakMap
+var weakMap = typeof WeakMap === 'undefined' ? require('weak-map') : WeakMap
 
 var WebGLEWStruct = new weakMap()
 
