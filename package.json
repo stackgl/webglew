@@ -25,6 +25,6 @@
   "readmeFilename": "README.md",
   "gitHead": "c561ef237cb3b66576b0e9e599f729628a209649",
   "dependencies": {
-    "weakmap": "0.0.6"
+    "weak-map": "^1.0.5"
   }
 }
